@@ -143,6 +143,7 @@ func TestMkdirAllOnUnusedNetworkHost(t *testing.T) {
 	errormsg := fmt.Sprintf("mkdir %s\\: The format of the specified network name is invalid.", path)
 	checkMkdirAllSubdirs(t, path, false, errormsg)
 	path = `\\?\UNC\0.0.0.0\share`
-	errormsg = `mkdir \\?\UNC\0.0.0.0: The specified path is invalid.`
+	// errormsg = `mkdir \\?\UNC\0.0.0.0: The specified path is invalid.` // pre go1.20
+	errormsg = `mkdir \\?\UNC\0.0.0.0\share\: The format of the specified network name is invalid.`
 	checkMkdirAllSubdirs(t, path, false, errormsg)
 }
