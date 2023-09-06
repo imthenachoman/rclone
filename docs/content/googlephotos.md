@@ -234,9 +234,10 @@ Here are the Standard options specific to google photos (Google Photos).
 
 #### --gphotos-client-id
 
-OAuth Client Id.
-
-Leave blank normally.
+Google Application Client Id
+Setting your own is recommended.
+See https://rclone.org/drive/#making-your-own-client-id for how to create your own.
+If you leave this blank, it will use an internal key which is low performance.
 
 Properties:
 
